@@ -1,6 +1,7 @@
 package net.tecnogab.app.hptsqlite.data;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -41,5 +42,20 @@ public class ClientesDbHelper extends SQLiteOpenHelper{
             return l_db.insert(ClienteEntry.TABLE_NAME, null, p_cliente.toContentValues());
     }
 
+    public Cursor obtenerTodosLosClientes(){
+        return getReadableDatabase().query(ClienteEntry.TABLE_NAME, null, null, null, null, null, null);
+    }
 
+    public Cursor obtenerClientePorId(String p_idCliente){
+        Cursor l_cursor = getReadableDatabase().query(
+                ClienteEntry.TABLE_NAME,
+                null,
+                ClienteEntry.ID + " LIKE ?",
+                new String[]{p_idCliente},
+                null,
+                null,
+                null
+        );
+        return l_cursor;
+    }
 }
