@@ -40,4 +40,6 @@ public class ClientesDbHelper extends SQLiteOpenHelper{
         SQLiteDatabase l_db = getWritableDatabase();
             return l_db.insert(ClienteEntry.TABLE_NAME, null, p_cliente.toContentValues());
     }
+
+
 }
