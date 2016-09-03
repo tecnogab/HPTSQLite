@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".cliente.ClientesActivity"
+            android:name=".clientes.ClientesActivity"
             android:label="@string/title_activity_clientes"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
